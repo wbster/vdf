@@ -33,7 +33,7 @@ function parser(strings) {
                 if (!data[k]) data[k] = {}
                 Object.assign(data[k], parser(strings))
             } else {
-                data[k] = v.replace(/\\+/g, '/').replace(/\"/g, '')
+                data[k] = v.replace(/\\+/g, '/').replace(/\"/g, '').trim()
             }
         }
     }
