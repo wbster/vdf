@@ -45,7 +45,9 @@ function parser(strings) {
  * @returns {object}
  */
 function parse(text) {
-    return parser(text.split('\n'))
+    const string = JSON.stringify(parser(text.split('\n')), null, '\t')
+        .replace(/"([\w\-]+)":/g, ($0, $1) => ('"' + $1.toLowerCase() + '":'))
+    return JSON.parse(string)
 }
 
 exports.parse = parse
