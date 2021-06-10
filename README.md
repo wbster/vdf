@@ -1,11 +1,11 @@
-
 # Valve Data Parser
 
-parse vmt files
+parse vmt/vdf files
 ```javascript
 
-const { parse } = require('@_wbstr/vdf')
+import { vmt, vdf } from '@_wbstr/vdf'
 
-const object = parse(vfdText)
+const object1 = await vmt(vmtString)
+const object2 = await vdf(vdfString)
 
 ```
